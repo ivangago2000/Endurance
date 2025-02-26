@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ENDURANCE</title>
+        <link rel="stylesheet" href="css/clientes.css">
+    </head>
+    <style>
+		body {
+  background-color: white; 
+  position: relative;
+}
+    </style>
+
+
+    <body>
+
+        <header class="header">
+			<div class="container">
+				<div class="logo">
+                    <a href="index.html">
+					<img src="img/endurance.png" alt="Logo Endurance" />
+                </a>
+				</div>
+				<nav class="menu">
+					<a href="clientes.html">Clientes</a>
+					<a href="catalogo.html">Catálogo de actividades</a>
+					<a href="nosotros.html">Sobre nosotros</a>
+					<a href="contacto.html">Contáctanos</a>
+				</nav>
+			</div>
+		</header>
+
+
+
+        <div class="texto">
+            <h2>CLIENTES QUE HAN CONFIADO EN NOSOTROS</h2>
+			<br>
+			<h6>A lo largo de estos años, han sido muchas las empresas para las que hemos trabajado.</h6>
+            <h6>Entre ellas Danonino, BBVA, Decathlon, Movistar, Media Markt, Leroy Merlin, Endesa, Petronor...</h6>
+        </div>
+
+        <br>
+
+
+
+        <div class="carousel-container">
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <div class="carousel">
+                <div class="carousel-item">
+                    <img src="img/logo1.jpg" alt="Logo 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/logo2.jpg" alt="Logo 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/logo3.jpg" alt="Logo 3">
+                </div>
+            </div>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+        </div>
+    
+        <script src="js/clientes.js"></script>
+
+		
+
+    </body>
+
+
+
+</html>
