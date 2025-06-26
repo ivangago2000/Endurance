@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -20,20 +19,25 @@
 
 
         <header class="header">
-			<div class="container">
-				<div class="logo">
+            <div class="container">
+                <div class="logo">
                     <a href="index.html">
-					<img src="img/endurance.png" alt="Logo Endurance" />
-                </a>
-				</div>
-				<nav class="menu">
-					<a href="clientes.html">Clientes</a>
-					<a href="catalogo.html">Catálogo de actividades</a>
-					<a href="nosotros.html">Sobre nosotros</a>
-					<a href="contacto.html">Contáctanos</a>
-				</nav>
-			</div>
-		</header>
+                        <img src="img/endurance.png" alt="Logo Endurance" />
+                    </a>
+                </div>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="menu" id="mainMenu">
+                    <a href="clientes.html">Clientes</a>
+                    <a href="catalogo.html">Catálogo de actividades</a>
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="contacto.html">Contáctanos</a>
+                </nav>
+            </div>
+        </header>
 
 
 
@@ -223,11 +227,18 @@
         
     
         <script src="js/catalogo.js"></script>
-
-		
-
-    </body>
-
-
-
+        <script>
+    // Menú hamburguesa funcional
+    const hamburger = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mainMenu');
+    hamburger.addEventListener('click', function() {
+        menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('open');
+        });
+    });
+    </script>
+</body>
 </html>

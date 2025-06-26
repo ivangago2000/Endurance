@@ -17,18 +17,25 @@
     <body>
 
         <header class="header">
-			<div class="container">
-				<div class="logo">
-					<img src="img/endurance.png" alt="Logo Endurance" />
-				</div>
-				<nav class="menu">
-					<a href="clientes.html">Clientes</a>
-					<a href="catalogo.html">Catálogo de actividades</a>
-					<a href="nosotros.html">Sobre nosotros</a>
-					<a href="contacto.html">Contáctanos</a>
-				</nav>
-			</div>
-		</header>
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/endurance.png" alt="Logo Endurance" />
+                    </a>
+                </div>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="menu" id="mainMenu">
+                    <a href="clientes.html">Clientes</a>
+                    <a href="catalogo.html">Catálogo de actividades</a>
+                    <a href="nosotros.html">Sobre nosotros</a>
+                    <a href="contacto.html">Contáctanos</a>
+                </nav>
+            </div>
+        </header>
 
 		<div class="texto">
             <h2>HAZ UN ENDURANCE</h2>
@@ -36,8 +43,18 @@
 			<p>Las actividades outdoor e indoor para empresas no solo son divertidísimas, sino que ayudan al trabajo en equipo, a romper el hielo y a la comunicación.</p>
         </div>
 
+        <script>
+    // Menú hamburguesa funcional
+    const hamburger = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mainMenu');
+    hamburger.addEventListener('click', function() {
+        menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('open');
+        });
+    });
+    </script>
     </body>
-
-
-
 </html>

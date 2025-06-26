@@ -87,6 +87,138 @@ body {
     border-radius: 10px;
 }
 
+/* --- Responsive Design Mejorado --- */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 5vw;
+  }
+  .logo {
+    margin-left: 0;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .logo img {
+    max-height: 70px;
+    width: auto;
+  }
+  .menu {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .menu a {
+    font-size: 1.1rem;
+    padding: 12px 0;
+    border-bottom: none;
+    border-radius: 8px;
+    background: #101922;
+    color: #fff;
+    text-align: center;
+  }
+  .header {
+    height: auto;
+    padding-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 5px 2vw;
+  }
+  .logo img {
+    max-height: 50px;
+  }
+  .texto {
+    font-size: 1rem;
+    padding: 10px 5px;
+    position: static;
+    transform: none;
+    top: auto;
+    left: auto;
+    margin: 90px 0 0 0;
+    background: rgba(16,25,34,0.8);
+    color: #fff;
+    border-radius: 1.2rem;
+    font-weight: normal;
+  }
+}
+
+.texto {
+    background: rgba(255,255,255,0.85);
+    color: #101922;
+    font-size: 1.2rem;
+    font-weight: 500;
+    max-width: 95vw;
+    margin: 120px auto 0 auto;
+    padding: 2rem 1.2rem;
+    border-radius: 1.5rem;
+    text-align: center;
+    box-shadow: 0 2px 16px 0 rgba(0,0,0,0.10);
+    position: static;
+    transform: none;
+    top: auto;
+    left: auto;
+}
+
+/* --- Hamburguesa y menú responsive --- */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 20;
+}
+.hamburger span {
+    height: 4px;
+    width: 100%;
+    background: #fff;
+    margin: 5px 0;
+    border-radius: 2px;
+    display: block;
+    transition: 0.3s;
+}
+@media (max-width: 900px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        background: #101922ee;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100vw;
+        padding: 0;
+        z-index: 15;
+    }
+    .menu.open {
+        display: flex;
+    }
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+    .container {
+        flex-direction: row;
+        align-items: center;
+        position: relative;
+    }
+    .menu a {
+        padding: 18px 0;
+        text-align: center;
+        font-size: 1.2rem;
+        border-bottom: 1px solid #222;
+        background: none;
+    }
+}
+
 
 
 

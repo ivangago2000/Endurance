@@ -7,34 +7,92 @@
         <link rel="stylesheet" href="css/index.css">
     </head>
     <style>
-	
-    
-span{
-    position:relative;
-  }
-  span::before{
-    position:absolute;
-    content: '';
-    color: white;
-    height:6rem;
-    width:133%;
-    background-color:#101922;
-    z-index:-1;
-    border-radius: 1.5rem;
-  }
-
-
         body {
-  background-image: url('img/velero.jpg'); 
-  position: relative;
-}
+            background-image: url('img/velero.jpg'); 
+            position: relative;
+        }
 
-.enlace a {
+        .enlace a {
             color: white;
             text-decoration: none;
             position: relative;
         }
 
+        .presentacion-bg {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 0.7rem 2.5rem;
+            background: #101922;
+            border-radius: 1.5rem;
+            z-index: 1;
+            min-width: 320px;
+        }
+        .presentacion-bg a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            width: 100%;
+        }
+        /* --- Hamburguesa y responsive menú --- */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 20;
+        }
+        .hamburger span {
+            height: 4px;
+            width: 100%;
+            background: #fff;
+            margin: 5px 0;
+            border-radius: 2px;
+            display: block;
+            transition: 0.3s;
+        }
+        @media (max-width: 900px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                gap: 0;
+                background: #101922ee;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100vw;
+                padding: 0;
+                z-index: 15;
+            }
+            .menu.open {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+                margin-left: auto;
+            }
+            .container {
+                flex-direction: row;
+                align-items: center;
+                position: relative;
+            }
+            .menu a {
+                padding: 18px 0;
+                text-align: center;
+                font-size: 1.2rem;
+                border-bottom: 1px solid #222;
+                background: none;
+            }
+        }
     </style>
 
 
@@ -47,7 +105,12 @@ span{
                         <img src="img/endurance.png" alt="Logo Endurance" />
                     </a>
                 </div>
-                <nav class="menu">
+                <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav class="menu" id="mainMenu">
                     <a href="clientes.html">Clientes</a>
                     <a href="catalogo.html">Catálogo de actividades</a>
                     <a href="nosotros.html">Sobre nosotros</a>
@@ -62,10 +125,10 @@ span{
             <p></p>
 			
         
-            <div class="enlace">
-                
-                           <span> <a href="img/190304-presentación shackleton resumen.pdf">PRESENTACIÓN GENERAL SHACKLETON</a> </span>
-                        
+            <div class="enlace" style="text-align: center;">
+                <span class="presentacion-bg">
+                    <a href="img/190304-presentación shackleton resumen.pdf">PRESENTACIÓN GENERAL SHACKLETON</a>
+                </span>
             </div>
             <br>
             <h6>Somos una empresa con más de 16 años de experiencia en la organización de eventos y actividades experienciales, con una metodología que lo respalda: EL MÉTODO SHAPE©</h6>
@@ -73,16 +136,20 @@ span{
 
     </div>
 
-
-
-
-   
-
-
-    
-
-    </body>
-
-
+    <script>
+    // Menú hamburguesa funcional
+    const hamburger = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mainMenu');
+    hamburger.addEventListener('click', function() {
+        menu.classList.toggle('open');
+    });
+    // Cierra el menú al hacer click en un enlace (opcional)
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('open');
+        });
+    });
+    </script>
+</body>
 
 </html>

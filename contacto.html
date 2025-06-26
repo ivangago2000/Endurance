@@ -21,7 +21,12 @@
                     <img src="img/endurance.png" alt="Logo Endurance" />
                 </a>
             </div>
-            <nav class="menu">
+            <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="menu" id="mainMenu">
                 <a href="clientes.html">Clientes</a>
                 <a href="catalogo.html">Catálogo de actividades</a>
                 <a href="nosotros.html">Sobre nosotros</a>
@@ -84,6 +89,19 @@
         </div>
         
     </div>
+    <script>
+    // Menú hamburguesa funcional
+    const hamburger = document.getElementById('hamburgerBtn');
+    const menu = document.getElementById('mainMenu');
+    hamburger.addEventListener('click', function() {
+        menu.classList.toggle('open');
+    });
+    menu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.remove('open');
+        });
+    });
+    </script>
 </body>
 </html>
 
